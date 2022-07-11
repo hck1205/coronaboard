@@ -1,9 +1,9 @@
-const axios = require('axios');
+const axios = require("axios");
 
 class ApiClient {
   constructor() {
     const client = axios.create({
-      baseURL: process.env.CB_API_BASE_URL || 'http://localhost:8080',
+      baseURL: process.env.CB_API_BASE_URL || "http://15.164.102.242",
     });
 
     client.interceptors.response.use((resp) => {
@@ -14,18 +14,18 @@ class ApiClient {
   }
 
   async upsertGlobalStat(data) {
-    return await this.client.post('global-stats', data);
+    return await this.client.post("global-stats", data);
   }
 
   async upsertKeyValue(key, value) {
-    return await this.client.post('key-value', {
+    return await this.client.post("key-value", {
       key,
       value,
     });
   }
 
   async findAllGlobalStat() {
-    return await this.client.get('global-stats');
+    return await this.client.get("global-stats");
   }
 
   async findKeyValue(key) {
