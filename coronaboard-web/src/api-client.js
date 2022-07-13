@@ -3,7 +3,7 @@ const axios = require('axios');
 class ApiClient {
   constructor() {
     const client = axios.create({
-      baseURL: process.env.CB_API_BASE_URL || "http://15.164.102.242",
+      baseURL: process.env.CB_API_BASE_URL || "http://localhost",
     });
 
     client.interceptors.response.use((resp) => {
